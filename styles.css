@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  min-width: 100vw;
+  min-height: 10vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+body {
+  display: grid;
+  min-width: 100vw;
+  justify-items: center;
+  align-items: center;
+}
+
+.gameboard {
+  border: 2px solid blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  min-width: 30rem;
+  min-height: 30rem;
+  margin-top: 5rem;
+}
+
+.field {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid black;
+}
+
+footer {
+  min-width: 100vw;
+  min-height: 10vh;
+  border-top: 1px solid black;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
