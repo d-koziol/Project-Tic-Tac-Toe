@@ -9,16 +9,16 @@
   </head>
   <header><h1>Tic Tac Toe Game</h1></header>
   <body>
-    <div class="gameboard">
-      <div class="field">1</div>
-      <div class="field">2</div>
-      <div class="field">3</div>
-      <div class="field">4</div>
-      <div class="field">5</div>
-      <div class="field">6</div>
-      <div class="field">7</div>
-      <div class="field">8</div>
-      <div class="field">9</div>
+    <div class="gameboard"></div>
+    <div class="players">
+      <label for="playerName1">Player One</label>
+      <input type="text" id="playerName1" />
+      <label for="playerName2">Player Two</label>
+      <input type="text" id="playerName2" />
+    </div>
+    <div class="gameButtons">
+      <button id="gameStart">Start</button>
+      <button id="gameReset">Reset</button>
     </div>
   </body>
   <script src="script.js"></script>
