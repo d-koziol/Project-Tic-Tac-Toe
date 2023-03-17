@@ -9,6 +9,10 @@ const gameBoard = (() => {
       boardElements += `<div class="markField" id="field-${index}">${field}</div>`;
     });
     document.querySelector(".gameboard").innerHTML = boardElements;
+    const fields = document.querySelectorAll(".markField");
+    fields.forEach((field) => {
+      field.addEventListener("click", Game.handleClick);
+    });
   };
 
   return {
@@ -35,8 +39,14 @@ const Game = (() => {
     gameOver = false;
     gameBoard.createBoard();
   };
+
+  const handleClick = (e) => {
+    const index = parseInt(e.target.id.split("-")[1], 10);
+    console.log(index);
+  };
   return {
     gameStart,
+    handleClick,
   };
 })();
 

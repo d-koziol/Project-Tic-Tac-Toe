@@ -31,6 +31,9 @@ body {
 }
 
 .markField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
   height: 10rem;
   border: 1px solid black;
@@ -49,6 +52,14 @@ body {
   justify-content: space-between;
   width: 10rem;
   height: auto;
+}
+
+.circle {
+  background-color: blue;
+  border-radius: 50%;
+  border: 1px solid blue;
+  width: 9rem;
+  height: 9rem;
 }
 
 footer {
