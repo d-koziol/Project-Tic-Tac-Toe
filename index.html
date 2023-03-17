@@ -11,13 +11,17 @@
   <body>
     <div class="gameboard"></div>
     <div class="players">
-      <label for="playerName1">Player One</label>
-      <input type="text" id="playerName1" />
-      <label for="playerName2">Player Two</label>
-      <input type="text" id="playerName2" />
+      <div class="player1">
+        <label for="playerName1">Player One</label>
+        <input type="text" id="playerName1" />
+      </div>
+      <div class="player2">
+        <label for="playerName2">Player Two</label>
+        <input type="text" id="playerName2" />
+      </div>
     </div>
     <div class="gameButtons">
-      <button id="gameStart">Start</button>
+      <button id="gameStart" onclick="visibleBoard()">Start</button>
       <button id="gameReset">Reset</button>
     </div>
   </body>

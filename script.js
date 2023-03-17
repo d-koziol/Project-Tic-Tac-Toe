@@ -6,7 +6,7 @@ const gameBoard = (() => {
   const createBoard = () => {
     let boardElements = "";
     gameBoardArr.forEach((field, index) => {
-      boardElements += `<div class="field" id="field-${index}">${field}</div>`;
+      boardElements += `<div class="markField" id="field-${index}">${field}</div>`;
     });
     document.querySelector(".gameboard").innerHTML = boardElements;
   };
