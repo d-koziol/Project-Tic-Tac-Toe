@@ -47,11 +47,6 @@ body {
   margin: 1rem;
 }
 
-.X {
-  width: 10rem;
-  height: 10rem;
-}
-
 .gameButtons {
   display: flex;
   justify-content: space-between;

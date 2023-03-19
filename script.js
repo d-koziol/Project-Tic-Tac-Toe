@@ -20,9 +20,12 @@ const gameBoard = (() => {
     createBoard();
   };
 
+  const getGameboard = () => gameBoardArr;
+
   return {
     createBoard,
     update,
+    getGameboard,
   };
 })();
 
@@ -47,7 +50,7 @@ const Game = (() => {
     gameBoard.createBoard();
     const fields = document.querySelectorAll(".markField");
     fields.forEach((field) => {
-      field.addEventListener("click", Game.handleClick);
+      field.addEventListener("click", handleClick);
     });
   };
 
@@ -60,9 +63,11 @@ const Game = (() => {
 
   const handleClick = (e) => {
     const index = parseInt(e.target.id.split("-")[1]);
+    if (gameBoard.getGameboard()[index] !== "") return;
     gameBoard.update(index, players[currentPlayer].mark);
     currentPlayer = currentPlayer === 0 ? 1 : 0;
   };
+
   return {
     gameStart,
     gameRestart,
