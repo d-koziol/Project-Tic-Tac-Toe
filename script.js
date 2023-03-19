@@ -15,8 +15,14 @@ const gameBoard = (() => {
     });
   };
 
+  const update = (index, value) => {
+    gameBoardArr[index] = value;
+    createBoard();
+  };
+
   return {
     createBoard,
+    update,
   };
 })();
 
@@ -35,21 +41,52 @@ const Game = (() => {
       createPlayer(document.querySelector("#playerName1").value, "X"),
       createPlayer(document.querySelector("#playerName2").value, "O"),
     ];
+
     currentPlayer = 0;
     gameOver = false;
+    gameBoard.createBoard();
+    const fields = document.querySelectorAll(".markField");
+    fields.forEach((field) => {
+      field.addEventListener("click", Game.handleClick);
+    });
+  };
+
+  const gameRestart = () => {
+    for (let i = 0; i < 9; i += 1) {
+      gameBoard.update(i, "");
+    }
     gameBoard.createBoard();
   };
 
   const handleClick = (e) => {
-    const index = parseInt(e.target.id.split("-")[1], 10);
-    console.log(index);
+    const index = parseInt(e.target.id.split("-")[1]);
+    gameBoard.update(index, players[currentPlayer].mark);
+    currentPlayer = currentPlayer === 0 ? 1 : 0;
   };
   return {
     gameStart,
+    gameRestart,
     handleClick,
   };
+
+  function winCheck(board) {
+    const winsCombo = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 9],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 9],
+      [0, 4, 9],
+      [2, 4, 6],
+    ];
+  }
 })();
 
+const restartButton = document.querySelector("#gameReset");
+restartButton.addEventListener("click", () => {
+  Game.gameRestart();
+});
 const startButton = document.querySelector("#gameStart");
 startButton.addEventListener("click", () => {
   Game.gameStart();
