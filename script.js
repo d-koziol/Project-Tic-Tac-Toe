@@ -29,7 +29,10 @@ const gameBoard = (() => {
   };
 })();
 
-const createPlayer = (name, mark) => ({ name, mark });
+const createPlayer = (name, mark) => ({
+  name,
+  mark,
+});
 
 const Game = (() => {
   let players;
@@ -68,7 +71,7 @@ const Game = (() => {
 
     if (winCheck(gameBoard.getGameboard(), players[currentPlayer].mark)) {
       gameOver = true;
-      alert(`${players[currentPlayer.name]} won!`);
+      alert(`${players[currentPlayer].name} won!`);
     } else if (tieCheck(gameBoard.getGameboard())) {
       gameOver = true;
       alert(`It's a tie!`);
