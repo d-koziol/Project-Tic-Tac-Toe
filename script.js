@@ -58,6 +58,7 @@ const Game = (() => {
     for (let i = 0; i < 9; i += 1) {
       gameBoard.update(i, "");
     }
+    gameOver = false;
     gameBoard.createBoard();
   };
 
