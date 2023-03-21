@@ -39,6 +39,8 @@ const Game = (() => {
   let currentPlayer;
   let gameOver;
 
+  let winner = document.querySelector(".winnerInfo");
+
   const gameStart = () => {
     players = [
       createPlayer(document.querySelector("#playerName1").value, "X"),
@@ -58,8 +60,10 @@ const Game = (() => {
     for (let i = 0; i < 9; i += 1) {
       gameBoard.update(i, "");
     }
-    gameOver = false;
+    document.querySelectorAll("input[type=text]").innerHTML = "";
     gameBoard.createBoard();
+    winner.textContent = "";
+    gameOver = false;
   };
 
   const handleClick = (e) => {
@@ -72,10 +76,10 @@ const Game = (() => {
 
     if (winCheck(gameBoard.getGameboard(), players[currentPlayer].mark)) {
       gameOver = true;
-      alert(`${players[currentPlayer].name} won!`);
+      winner.textContent = `${players[currentPlayer].name} won!`;
     } else if (tieCheck(gameBoard.getGameboard())) {
       gameOver = true;
-      alert(`It's a tie!`);
+      winner.textContent = `It's a tie!`;
     }
 
     currentPlayer = currentPlayer === 0 ? 1 : 0;
