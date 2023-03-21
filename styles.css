@@ -24,6 +24,8 @@ body {
   font-size: 30px;
   font-weight: bold;
   color: rgb(0, 140, 255);
+  width: 100vw;
+  text-align: center;
 }
 
 .gameboard {
@@ -35,20 +37,24 @@ body {
   min-width: 30rem;
   min-height: 30rem;
   margin-top: 5rem;
+  gap: 1px;
 }
 
 .markField {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   width: 10rem;
   height: 10rem;
-  border: 1px solid black;
+  border: 2px solid #1c84ff;
+  background: white;
 }
 
 .players {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: column;
+  gap: 2rem;
   width: 100vw;
   margin: 1rem;
 }
@@ -58,6 +64,41 @@ body {
   justify-content: space-between;
   width: 10rem;
   height: auto;
+}
+
+button {
+  align-items: center;
+  appearance: button;
+  background-color: #0276ff;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue", sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.13s ease-in-out, background 0.13s ease-in-out,
+    opacity 0.13s ease-in-out, box-shadow 0.13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:active {
+  background-color: #006ae8;
+}
+
+button:hover {
+  background-color: #1c84ff;
 }
 
 footer {

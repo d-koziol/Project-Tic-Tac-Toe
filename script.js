@@ -62,7 +62,7 @@ const Game = (() => {
     }
     document.querySelectorAll("input[type=text]").innerHTML = "";
     gameBoard.createBoard();
-    winner.textContent = "";
+    winner.textContent = "Who's gonna win ??";
     gameOver = false;
   };
 
