@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Labrada:wght@300&family=Quicksand:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,6 @@ header {
   display: grid;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
 }
 
 body {
@@ -17,6 +18,8 @@ body {
   min-width: 100vw;
   justify-items: center;
   align-items: center;
+  font-family: "Labrada", serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .winnerInfo {
@@ -48,22 +51,31 @@ body {
   height: 10rem;
   border: 2px solid #1c84ff;
   background: white;
+  font-size: 8rem;
 }
 
 .players {
   display: grid;
   justify-content: center;
   grid-auto-flow: column;
+  padding-top: 2rem;
   gap: 2rem;
   width: 100vw;
-  margin: 1rem;
+  font: 26px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 18px;
 }
 
 .gameButtons {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
   width: 10rem;
   height: auto;
+  padding-top: 2rem;
 }
 
 button {
@@ -99,12 +111,12 @@ button:active {
 
 button:hover {
   background-color: #1c84ff;
+  transform: rotate(360deg);
+  transition: transform 1s;
 }
 
 footer {
-  min-width: 100vw;
-  min-height: 10vh;
-  border-top: 1px solid black;
+  min-height: 3vh;
   display: flex;
   align-content: center;
   justify-content: center;
