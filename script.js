@@ -40,6 +40,15 @@ const Game = (() => {
   let gameOver;
 
   let winner = document.querySelector(".winnerInfo");
+  const playerTurn = document.querySelector(".playerTurn");
+
+  const playersTurn = () => {
+    if (players[currentPlayer] === 0) {
+      playerTurn.textContent = "Its O Turn";
+    } else if (players[currentPlayer] === 1) {
+      playerTurn.textContent = "Its X Turn";
+    }
+  };
 
   const gameStart = () => {
     players = [
@@ -50,6 +59,7 @@ const Game = (() => {
     currentPlayer = 0;
     gameOver = false;
     gameBoard.createBoard();
+    playersTurn();
     const fields = document.querySelectorAll(".markField");
     fields.forEach((field) => {
       field.addEventListener("click", handleClick);
@@ -63,6 +73,7 @@ const Game = (() => {
     document.querySelectorAll("input[type=text]").innerHTML = "";
     gameBoard.createBoard();
     winner.textContent = "Who's gonna win ??";
+    playerTurn.textContent = "";
     gameOver = false;
   };
 
@@ -89,6 +100,7 @@ const Game = (() => {
     gameStart,
     gameRestart,
     handleClick,
+    playersTurn,
   };
 
   function winCheck(board) {
