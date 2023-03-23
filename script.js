@@ -84,7 +84,7 @@ const Game = (() => {
       winner.textContent = `It's a tie!`;
     }
 
-    playerTurn.textContent = `${players[currentPlayer].name}'s turn'`;
+    playerTurn.textContent = `${players[currentPlayer].name}'s turn.`;
 
     currentPlayer = currentPlayer === 0 ? 1 : 0;
   };
